@@ -1,0 +1,12 @@
+.popup__container {
+  position: fixed;
+  top: 23%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 450px) {
+  .popup__container {
+    top: 19%;
+  }
+}

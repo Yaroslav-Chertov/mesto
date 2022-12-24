@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+
+<body class="root">
+    <header class="header">
+        <img class="header__logo" src="./images/logo.svg" alt="Логотип Mesto">
+    </header>
+    <main>
+        <section class="profile">
+            <div class="profile__container-info">
+                <div class="profile__container-avatar">
+                    <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар профиля">
+                </div>
+                <div class="profile__user">
+                    <div class="profile__info">
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <p class="profile__caption">Исследователь океана</p>
+                    </div>
+                    <button class="profile__edit-button button-open-form"></button>
+                </div>
+            </div>
+            <button class="profile__add-button"></button>
+        </section>
+        <section class="elements">
+            <ul class="elements__list">
+                <li class="elements__card">
+                    <figure class="elements__figure">
+                        <img src="./images/viborg.jpg" alt="Фото Выборга" class="elements__image">
+                        <figcaption class="elements__figcaption">Выборг</figcaption>
+                    </figure>
+                    <div class="elements__like-container">
+                        <button class="elements__like-button"></button>
+                    </div>
+                </li>
+                <li class="elements__card">
+                    <figure class="elements__figure">
+                        <img src="./images/gulf-of-finland.jpg" alt="Фото Финского залива" class="elements__image">
+                        <figcaption class="elements__figcaption">Финский залив</figcaption>
+                    </figure>
+                    <div class="elements__like-container">
+                        <button class="elements__like-button"></button>
+                    </div>
+                </li>
+                <li class="elements__card">
+                    <figure class="elements__figure">
+                        <img src="./images/zelenogorsk.jpg" alt="Фото Зеленогорска" class="elements__image">
+                        <figcaption class="elements__figcaption">Зеленогорск</figcaption>
+                    </figure>
+                    <div class="elements__like-container">
+                        <button class="elements__like-button"></button>
+                    </div>
+                </li>
+                <li class="elements__card">
+                    <figure class="elements__figure">
+                        <img src="./images/fish-village-finland.jpg" alt="Фото рыбной деревни в Финляндии"
+                            class="elements__image">
+                        <figcaption class="elements__figcaption">Рыбная деревня в&nbsp;Финляндии</figcaption>
+                    </figure>
+                    <div class="elements__like-container">
+                        <button class="elements__like-button"></button>
+                    </div>
+                </li>
+                <li class="elements__card">
+                    <figure class="elements__figure">
+                        <img src="./images/lappeenranta.JPG" alt="Фото Лаппеенранты" class="elements__image">
+                        <figcaption class="elements__figcaption">Лаппеенранта</figcaption>
+                    </figure>
+                    <div class="elements__like-container">
+                        <button class="elements__like-button"></button>
+                    </div>
+                </li>
+                <li class="elements__card">
+                    <figure class="elements__figure">
+                        <img src="./images/porvoo-town.JPG" alt="Фото Порвоо" class="elements__image">
+                        <figcaption class="elements__figcaption">Порвоо</figcaption>
+                    </figure>
+                    <div class="elements__like-container">
+                        <button class="elements__like-button"></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__author">&copy; 2020 Mesto Russia</p>
+    </footer>
+    <div class="popup popup-edit">
+        <div class="popup__container">
+            <form class="form" name="info">
+                <h3 class="form__header">Редактировать профиль</h3>
+                <fieldset class="form__fieldset">
+                    <input class="form__input profile-name" type="text" placeholder="Жак-Ив Кусто">
+                    <input class="form__input profile-caption" type="text" placeholder="Исследователь океана">
+                    <button class="form__save-button popup__save-button">Сохранить</button>
+                </fieldset>
+                <button type="reset" class="popup__close-button popup-edit__close-button"></button>
+            </form>
+        </div>
+    </div>
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>
