@@ -1,12 +1,11 @@
 .popup__container {
-  position: fixed;
-  top: 23%;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  transform: translateY(-17%);
 }
 
 @media screen and (max-width: 450px) {
   .popup__container {
-    top: 19%;
+    transform: translateY(-9%);
   }
 }
