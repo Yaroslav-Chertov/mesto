@@ -4,11 +4,11 @@
   box-sizing: border-box;
   border: none;
   cursor: pointer;
-  padding: 0;
+  margin-top: 30px;
   background-image: url(../../../images/like-button.svg);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #FFFFFF;
+  background-color: transparent;
   transition: opacity .3s ease;
 }
 

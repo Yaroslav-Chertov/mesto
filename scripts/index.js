@@ -1,17 +1,13 @@
-const aboutButton = document.querySelector('.button-open-form');
-const aboutPopup = document.querySelector('.popup-edit');
-const aboutCloseButton = document.querySelector('.popup-edit__close-button');
+const aboutButton = document.querySelector('.profile__edit-button');
+const aboutPopup = document.querySelector('.popup');
+const aboutCloseButton = document.querySelector('.popup__close-button');
 const formElement = document.querySelector('[name="info"]');
 const userName = document.querySelector('.profile__name');
 const userJob = document.querySelector('.profile__caption');
-const input = document.querySelector('.form__input');
-const nameInput = aboutPopup.querySelector('.profile-name');
-const jobInput = aboutPopup.querySelector('.profile-caption');
-const aboutSaveButton = aboutPopup.querySelector('.popup__save-button');
-
+const nameInput = aboutPopup.querySelector('[name="name"]');
+const jobInput = aboutPopup.querySelector('[name="about"]');
 
 aboutButton.addEventListener('click', (evt) => {
-    evt.preventDefault();
     aboutPopup.classList.add('popup_opened');
     nameInput.value = userName.textContent;
     jobInput.value = userJob.textContent;
@@ -22,7 +18,6 @@ function closePopup(popup) {
 }
 
 aboutCloseButton.addEventListener('click', (evt) => {
-    evt.preventDefault();
     aboutPopup.classList.remove('popup_opened');
 })
 
