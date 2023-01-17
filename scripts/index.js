@@ -18,8 +18,8 @@ const imageInput = addPlacePopup.querySelector('[name="link"]');
 
 const placePopup = document.querySelector('.popup-place');
 const closePlaceButton = placePopup.querySelector('.popup__close-button');
-const placePopupImage = placePopup.querySelector('.place__image');
-const placePopupTitle = placePopup.querySelector('.place__title');
+const placePopupImage = placePopup.querySelector('.place__picture');
+const placePopupTitle = placePopup.querySelector('.place__caption');
 
 const cardsContainer = document.querySelector('.elements__list');
 const cardsTemplate = document
@@ -49,6 +49,7 @@ function createCard({ name, link }) {
         card.remove();
     });
 
+    //photo popup
     const viewPhoto = card.querySelector('.elements__image');
     viewPhoto.addEventListener('click', function (evt) {
         placePopup.classList.add('popup_opened');
@@ -56,9 +57,9 @@ function createCard({ name, link }) {
         placePopupTitle.textContent = name;
     });
 
-    closePlaceButton.addEventListener('click', function () {
-        closePopup(placePopup);
-    });
+    closePlaceButton.addEventListener('click', (evt) => {
+        placePopup.classList.remove('popup_opened');
+    })
 
     return card;
 }
@@ -72,7 +73,9 @@ function addCard(evt) {
         link: newCardLink
     })
     cardsContainer.prepend(addedNewCard);
+
     closePopup(addPlacePopup);
+    placeForm.reset();
 }
 
 placeForm.addEventListener('submit', addCard);
