@@ -125,7 +125,6 @@ aboutPopup.addEventListener('submit', handleFormSubmit);
 //new place popup
 placeAddButton.addEventListener('click', (evt) => {
     openPopup(popupAddPlace);
-    placeInput.value = placeTitle.textContent;
 })
 
 placeCloseButton.addEventListener('click', (evt) => {
