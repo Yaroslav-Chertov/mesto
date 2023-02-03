@@ -30,11 +30,20 @@ const cardsTemplate = document
 //universal popup opening function
 function openPopup(popup) {
     popup.classList.add('popup_opened');
+    addEventListener('keydown', closePopupEsc);
 }
 
 //universal popup closing function
 function closePopup(popup) {
+    removeEventListener('keydown', closePopupEsc);
     popup.classList.remove('popup_opened');
+}
+
+function closePopupEsc(evt) {
+    if (evt.key === "Escape") {
+        const activePopup = document.querySelector('.popup_opened');
+        closePopup(activePopup);
+    }
 }
 
 function deleteCard(evt) {
@@ -127,17 +136,14 @@ placeAddButton.addEventListener('click', (evt) => {
     openPopup(popupAddPlace);
 })
 
-placeCloseButton.addEventListener('click', (evt) => {
-    closePopup(popupAddPlace);
-})
+const buttonCloseList = document.querySelectorAll('.popup__close-button');
 
-popupAddPlace.addEventListener('click', (evt) => {
-    console.log(evt.target, evt.currentTarget);
-    if (evt.target === evt.currentTarget) {
-        closePopup(popupAddPlace);
-    }
-})
-
-imageCloseButton.addEventListener('click', (evt) => {
-    closePopup(imagePopup);
-})
+buttonCloseList.forEach(btn => {
+    const popup = btn.closest('.popup');
+    popup.addEventListener('mousedown', (evt) => {
+        if (evt.target === evt.currentTarget) {
+            closePopup(popup);
+        }
+    });
+    btn.addEventListener('click', () => closePopup(popup));
+}) 
