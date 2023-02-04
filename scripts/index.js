@@ -1,5 +1,5 @@
 const aboutButton = document.querySelector('.profile__edit-button');
-const aboutPopup = document.querySelector('.popup-edit');
+const aboutPopup = document.querySelector('.popup_type_profile');
 const aboutCloseButton = document.querySelector('.popup__close-button');
 const profileForm = document.querySelector('[name="info"]');
 const userName = document.querySelector('.profile__name');
@@ -8,7 +8,7 @@ const nameInput = aboutPopup.querySelector('[name="name"]');
 const jobInput = aboutPopup.querySelector('[name="about"]');
 
 const placeAddButton = document.querySelector('.profile__add-button');
-const popupAddPlace = document.querySelector('.popup-add');
+const popupAddPlace = document.querySelector('.popup_type_add-card');
 const placeCloseButton = popupAddPlace.querySelector('.popup__close-button');
 const placeForm = document.querySelector('[name="photo"]');
 const placeTitle = document.querySelector('.place__title');
@@ -16,7 +16,7 @@ const placeImage = document.querySelector('.place__image');
 const placeInput = popupAddPlace.querySelector('[name="name"]');
 const imageInput = popupAddPlace.querySelector('[name="link"]');
 
-const imagePopup = document.querySelector('.popup-place');
+const imagePopup = document.querySelector('.popup_type_view-photo');
 const imageCloseButton = imagePopup.querySelector('.popup__close-button');
 const imagePopupPic = imagePopup.querySelector('.place__picture');
 const imagePopupTitle = imagePopup.querySelector('.place__caption');
@@ -26,6 +26,8 @@ const cardsTemplate = document
     .querySelector('.item-template')
     .content
     .querySelector('.elements__card');
+
+const buttonCloseList = document.querySelectorAll('.popup__close-button');
 
 //universal popup opening function
 function openPopup(popup) {
@@ -116,7 +118,6 @@ aboutCloseButton.addEventListener('click', (evt) => {
 })
 
 aboutPopup.addEventListener('click', (evt) => {
-    console.log(evt.target, evt.currentTarget);
     if (evt.target === evt.currentTarget) {
         closePopup(aboutPopup);
     }
@@ -136,8 +137,6 @@ placeAddButton.addEventListener('click', (evt) => {
     openPopup(popupAddPlace);
 })
 
-const buttonCloseList = document.querySelectorAll('.popup__close-button');
-
 buttonCloseList.forEach(btn => {
     const popup = btn.closest('.popup');
     popup.addEventListener('mousedown', (evt) => {
@@ -146,4 +145,4 @@ buttonCloseList.forEach(btn => {
         }
     });
     btn.addEventListener('click', () => closePopup(popup));
-}) 
+})
