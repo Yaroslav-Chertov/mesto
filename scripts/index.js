@@ -25,7 +25,7 @@ const cardsContainer = document.querySelector('.elements__list');
 const cardsTemplate = document
     .querySelector('.item-template')
     .content
-    .querySelector('.elements__card');
+    .querySelector('.element');
 
 const buttonCloseList = document.querySelectorAll('.popup__close-button');
 
@@ -49,23 +49,23 @@ function closePopupEsc(evt) {
 }
 
 function deleteCard(evt) {
-    evt.target.closest('.elements__card').remove();
+    evt.target.closest('.element').remove();
 }
 
 function createCard({ name, link }) {
     const card = cardsTemplate.cloneNode(true);
-    const cardName = card.querySelector('.elements__title');
+    const cardName = card.querySelector('.element__title');
     cardName.textContent = name;
-    const cardImage = card.querySelector('.elements__image');
+    const cardImage = card.querySelector('.element__image');
     cardImage.src = link;
     cardImage.alt = name;
 
-    const likeButton = card.querySelector('.elements__like-button');
+    const likeButton = card.querySelector('.element__like-button');
     likeButton.addEventListener('click', function (evt) {
-        likeButton.classList.toggle('elements__like-button_liked');
+        likeButton.classList.toggle('element__like-button_liked');
     });
 
-    const deleteButton = card.querySelector('.elements__delete-button');
+    const deleteButton = card.querySelector('.element__delete-button');
     deleteButton.addEventListener('click', function (evt) {
         card.remove();
     });
