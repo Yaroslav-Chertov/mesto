@@ -127,7 +127,6 @@ placeAddButton.addEventListener('click', (evt) => {
 });
 
 aboutPopup.addEventListener('submit', handleFormSubmit);
-
 placeForm.addEventListener('submit', addCard);
 
 renderCards(initialCards);
