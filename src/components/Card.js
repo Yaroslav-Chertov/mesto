@@ -1,9 +1,9 @@
 export default class Card {
-    constructor(data, templateSelector, openImagePopup) {
+    constructor(data, templateSelector, handleCardClick) {
         this._name = data.name;
         this._link = data.link;
         this._templateSelector = templateSelector;
-        this._openImagePopup = openImagePopup;
+        this._handleCardClick = handleCardClick;
     };
 
     _getTemplate() {
@@ -39,6 +39,7 @@ export default class Card {
 
     _deleteCard() {
         this._element.remove();
+        this._element = null;
     };
 
     _setEventListeners() {
@@ -51,7 +52,7 @@ export default class Card {
         });
 
         this._cardImage.addEventListener('click', () => {
-            this._openImagePopup(this._link, this._name)
+            this._handleCardClick(this._link, this._name)
         });
     };
 }

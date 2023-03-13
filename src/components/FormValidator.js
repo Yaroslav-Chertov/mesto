@@ -12,7 +12,7 @@ export default class FormValidator {
         } else {
             this._hideInputError(inputElement);
 
-        }
+        };
     };
 
     _showInputError = (inputElement, errorMessage) => {
@@ -66,15 +66,14 @@ export default class FormValidator {
     };
 
     enableValidation = () => {
-
         this._setEventListeners();
         this._toggleButtonState();
     };
 
-    resetInput = () => {
+    resetValidation = () => {
         this._disableSubmitButton();
         this._inputList.forEach((inputElement) => {
             this._hideInputError(inputElement);
-        })
+        });
     };
 }
