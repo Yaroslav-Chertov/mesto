@@ -10,6 +10,7 @@ export const placeInput = popupAddPlace.querySelector('[name="name"]');
 export const imageInput = popupAddPlace.querySelector('[name="link"]');
 export const imagePopup = document.querySelector('.popup_type_view-photo');
 export const avatarForm = document.querySelector('[name="editAvatar"]');
+export const avatarInput = aboutPopup.querySelector('[name="avatar"]');
 export const buttonEditAvatar = document.querySelector('.profile__avatar-edit-button');
 
 export const validationObj = {
