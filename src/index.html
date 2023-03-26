@@ -16,6 +16,8 @@
             <div class="profile__container-info">
                 <div class="profile__container-avatar">
                     <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Аватар профиля.">
+                    <button class="profile__avatar-edit-button"
+                        aria-label="открыть форму редактирования аватара"></button>
                 </div>
                 <div class="profile__user">
                     <div class="profile__info">
@@ -36,7 +38,7 @@
     </footer>
     <div class="popup popup_type_profile">
         <div class="popup__container">
-            <form class="form" name="info" novalidate>
+            <form class="form" name="info" method="POST" novalidate>
                 <h3 class="form__header">Редактировать профиль</h3>
                 <div class="form__fieldset">
                     <input class="form__input" type="text" placeholder="Жак-Ив Кусто" name="name" id="name-input"
@@ -53,7 +55,7 @@
     </div>
     <div class="popup popup_type_add-card">
         <div class="popup__container">
-            <form class="form" name="photo" novalidate>
+            <form class="form" name="photo" method="POST" novalidate>
                 <h3 class="form__header">Новое место</h3>
                 <div class="form__fieldset">
                     <input class="form__input" type="text" placeholder="Название" name="name" id="place-input" required
@@ -68,7 +70,7 @@
             </form>
         </div>
     </div>
-    <div class="popup popup_content-image popup_type_view-photo">
+    <div class="popup popup_content-image popup_type_view-photo" id="popup_photo">
         <div class="place">
             <div class="place__figure">
                 <img class="place__picture" alt="" src=" " />
@@ -77,13 +79,41 @@
             </div>
         </div>
     </div>
+    <div class="popup popup_type_del-card">
+        <div class="popup__container">
+            <form class="form" name="photo" novalidate>
+                <h3 class="form__header">Вы уверены?</h3>
+                <div class="form__fieldset">
+                    <button class="form__save-button">Да</button>
+                </div>
+                <button type="reset" class="popup__close-button" aria-label="закрыть"></button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_type_update-avatar">
+        <div class="popup__container">
+            <form class="form" name="editAvatar" novalidate>
+                <h3 class="form__header">Обновить аватар</h3>
+                <div class="form__fieldset">
+                    <input class="form__input" type="url" placeholder="Ссылка на картинку" name="avatar" id="link-input"
+                        required>
+                    <span class="link-input-error form__input-error"></span>
+                    <button type="submit" class="form__save-button">Сохранить</button>
+                </div>
+                <button type="reset" class="popup__close-button" aria-label="закрыть"></button>
+            </form>
+        </div>
+    </div>
     <template class="item-template">
         <li class="element">
             <button type="button" class="element__delete-button" aria-label="удалить фото"></button>
             <img src=" " alt="" class="element__image">
             <div class="element__info">
                 <h2 class="element__title"></h2>
-                <button type="button" class="element__like-button" aria-label="поставить лайк"></button>
+                <div class="element__like-container">
+                    <button type="button" class="element__like-button" aria-label="поставить лайк"></button>
+                    <p class="element__like-quantity"></p>
+                </div>
             </div>
         </li>
     </template>
