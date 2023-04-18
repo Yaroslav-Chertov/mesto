@@ -1,6 +1,8 @@
 # Проект: Место
 
-[Проектная работа на GitHub Pages](https://yaroslav-chertov.github.io/mesto/)
+[Ссылка на GitHub Pages](https://yaroslav-chertov.github.io/mesto/)
+
+## Создана в рамках обучения в [Яндекс.Практикум](https://praktikum.yandex.ru/) на курсе ["Веб-разработчик"](https://praktikum.yandex.ru/web/)
 
 ## Описание и функциональность
 
@@ -22,3 +24,13 @@
 * БЭМ методология, файловая структура;
 * ООП и разбиение на модули;
 * Webpack.
+
+## Инструкция по установке
+
+```
+git clone https://github.com/Yaroslav-Cherto/mesto.git
+cd mesto
+npm i webpack --save-dev
+npm run build
+npm run dev
+```
