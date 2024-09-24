@@ -1,4 +1,4 @@
-# Проект: Место
+# Место
 
 [Ссылка на GitHub Pages](https://yaroslav-chertov.github.io/mesto/)
 
@@ -26,10 +26,15 @@
 
 ## Инструкция по установке
 
-```
+Клонировать репозиторий:
+
+`
 git clone https://github.com/Yaroslav-Cherto/mesto.git
-cd mesto
-npm i webpack --save-dev
-npm run build
-npm run dev
+`
+
+В директории проекта запустить приложение в режиме разработки:
+
+```
+npm install
+npm start
 ```
